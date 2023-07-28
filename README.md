@@ -30,7 +30,7 @@ To use the program, follow these steps:
 2. Download or clone the repository containing the program's source code.
 3. Navigate to the program's directory in the terminal.
 4. Build the program by running the `make` command.
-5. Execute the program by running `./main`.
+5. Execute the program by running `./bin/main`.
 
 ## Screenshots
 
