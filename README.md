@@ -25,12 +25,44 @@ The program provides a text-based user interface through the terminal. When runn
 
 ## How to Use
 
-To use the program, follow these steps:
-1. Make sure you have GCC and Make installed on your Linux system. If not, you can install them using `sudo apt-get install gcc make -y`.
-2. Download or clone the repository containing the program's source code.
-3. Navigate to the program's directory in the terminal.
-4. Build the program by running the `make` command.
-5. Execute the program by running `./bin/main`.
+### For Linux:
+
+#### Prerequisites:
+1. Ensure that you have GCC and Make installed on your Linux system. If not, you can install them using the following command:
+   ```
+   sudo apt-get install gcc make -y
+   ```
+
+#### Building and Running:
+1. Download or clone the repository containing the program's source code.
+2. Open a terminal and navigate to the program's directory.
+3. Build the program by running the `make` command.
+   ```
+   make
+   ```
+4. Execute the program by running the following command:
+   ```
+   ./bin/main
+   ```
+
+### For Windows:
+
+#### Prerequisites:
+1. If you don't have GCC and Make installed on your Windows system, you need to install the MinGW-w64 environment, which provides GCC and Make for Windows. You can download the MinGW-w64 installer from [here](https://sourceforge.net/projects/mingw-w64/files/).
+   - During installation, make sure to select "x86_64" for the architecture to match the code's x86-64 assembly.
+   - Add the installation path (e.g., `C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin`) to your system's PATH environment variable.
+
+#### Building and Running:
+1. Download or clone the repository containing the program's source code.
+2. Open a Command Prompt or PowerShell window and navigate to the program's directory.
+3. Build the program by running the following command:
+   ```
+   mingw32-make
+   ```
+4. Execute the program by running the following command:
+   ```
+   bin\main
+   ```
 
 ## Screenshots
 
