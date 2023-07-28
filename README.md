@@ -34,7 +34,6 @@ To use the program, follow these steps:
 
 ## Screenshots
 
-[Insert any relevant screenshots or images of the program in action here if available.]
 
 ## Note
 
