@@ -1,0 +1,39 @@
+name: Build and Upload Artifact
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up MinGW-w64 (Windows)
+        if: matrix.os == 'windows'
+        run: |
+          choco install mingw -y
+          refreshenv
+
+      - name: Install prerequisites (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install gcc make -y
+
+      - name: Build program
+        run: |
+          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            make
+          elif [[ "${{ matrix.os }}" == "windows" ]]; then
+            mingw32-make
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-program
+          path: bin/main
